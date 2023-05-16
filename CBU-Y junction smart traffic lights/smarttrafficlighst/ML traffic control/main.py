@@ -266,61 +266,7 @@ class TLAgent:
         self.stats['intersection_queue'][experiment, episode] = sum_intersection_queue_per_episode  
         np.save('stats_{}_{}.npy'.format(experiment, episode), self.stats)
         
-      
-      
-        """
-        Constructor for the TLAgent class.
-
-        Args:
-            env (SumoEnv): Sumo environment object.
-            traffic_gen (TrafficGenerator): Traffic generator object.
-            max_steps (int): Maximum steps per episode.
-            num_experiments (int): Number of experiments to run.
-            total_episodes (int): Total number of episodes per experiment.
-            qmodel_filename (str): Filename for the Q-model.
-            stats (dict): Statistics dictionary.
-            init_epoch (int): Initial epoch.
-            learn (bool, optional): Whether to train the agent. Defaults to True.
-        """
-        
-        self.env = env
-        self.traffic_gen = traffic_gen
-        self.total_episodes = total_episodes
-        self.discount = 0.75
-        self.epsilon = 0.9
-        self.replay_buffer = deque(maxlen=50000)
-        self.batch_size = 100
-        self.num_states = 80
-        self.num_actions = 4
-        self.num_experiments = num_experiments
-
-        # Phases are in the same order as specified in the .net.xml file
-        self.PHASE_NS_GREEN = 0  # action 0 code 00
-        self.PHASE_NS_YELLOW = 1
-        self.PHASE_NSL_GREEN = 2  # action 1 code 01
-        self.PHASE_NSL_YELLOW = 3
-        self.PHASE_EW_GREEN = 4  # action 2 code 10
-        self.PHASE_EW_YELLOW = 5
-        self.PHASE_EWL_GREEN = 6  # action 3 code 11
-        self.PHASE_EWL_YELLOW = 7
-
-        self.green_duration = 10
-        self.yellow_duration = 4
-        self.stats = stats
-        self.init_epoch = init_epoch
-        self.QModel = None
-        self.tau = 20
-        self.TargetQModel = None
-        self.qmodel_filename = qmodel_filename
-        self.stats_filename = stats_filename
-        self.init_epoch = init_epoch
-        self._load_models(learn)
-        self.max_steps = max_steps
-        
-
-
-    # The rest of the code remains unchanged
-
+     
 if __name__ == "__main__":
     # --- TRAINING OPTIONS ---
     training_enabled = True
