@@ -1,3 +1,27 @@
+
+
+"""
+Adaptive Traffic Light System based on DQN
+Author: collins mtonga
+Date: May, 2023
+
+This implementation is based on:
+- The original DQN algorithm by DeepMind (2013)
+  Source: https://arxiv.org/abs/1312.5602
+- The OpenAI Gym library
+  Source: https://gym.openai.com/
+- The Keras library
+  Source: https://keras.io/
+- The SUMO toolkit for traffic simulation
+  Source: https://www.eclipse.org/sumo/
+-RituPandes work adaptive traffic lights
+  https://github.com/RituPande/DQL-TSC.git
+"""
+
+
+
+
+
 import os
 import sys
 from DQN import Model
